@@ -1,0 +1,77 @@
+<style lang="scss" scoped>
+
+.row{
+  /* contains col-lg in class name */
+  [class*='col-']{}
+  .module{
+    padding: 15px;
+    background: #eee;
+    margin: 10px;
+  }
+}
+
+</style>
+
+<template>
+<div class="panel panel-layout">
+  <h1>布局模式: Layout/Module</h1>
+  <div class="pane">
+    <template v-for="item in demo">
+      <div class="row">
+        <template v-for="col in item">
+          <div :class="['col-' + col]">
+            <div class="module">{{ col }}</div>
+          </div>
+        </template>
+      </div>
+    </template>
+  </div>
+  <br>
+  <h1>Layout/Module</h1>
+  <br>
+  <p>
+    .pane + .layout <br>
+    .row <br>
+    .col <br>
+    .module <br>
+  </p>
+  <h1>示例</h1>
+  <br>
+  <code-snippet :value="html" type="html"></code-snippet>
+</div>
+</template>
+
+<script>
+const html =
+   `<div class="pane">
+      <div class="module"></div>
+    </div>
+    <div class="panel layout">
+      <div class="row">
+        <div class="col-8">
+          <div class="module"></div>
+        </div>
+        <div class="col-16">
+          <div class="module"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="module module-footer"></div>
+    </div>`
+export default {
+  data () {
+    return {
+      html,
+      demo: [
+        [7, 5],
+        [12, 12],
+        [2, 22],
+        [3, 21],
+        [4, 20],
+        [5, 12, 7]
+      ]
+    }
+  }
+}
+</script>
