@@ -1,0 +1,12 @@
+Font license info
+
+
+## HUI Icon Font
+
+   Copyright (C) 2015 by hujiang
+
+   Author:    hujiang
+   License:   SIL ()
+   Homepage:  http://ue.hujiang.com/widgets/mobile/font/list.html
+
+
