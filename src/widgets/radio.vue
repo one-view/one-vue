@@ -47,6 +47,7 @@ $color: #4181e0;
       padding: 0 10px;
       margin: 0;
       margin-right: -1px;
+      background-color: #fff;
       &.on {
         background-color: $color;
         border-color: $color;
