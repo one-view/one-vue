@@ -18,7 +18,7 @@
 
 <template>
     <div class="panel">
-        <div class="row">
+        <div class="one-row">
             <h1>Size</h1>
             <div>
                 <div class="block" style="font-size: 20px">特大号：20px</div>
@@ -27,7 +27,7 @@
                 <div class="block" style="font-size: 12px">小号：12px</div>
             </div>
         </div>
-        <div class="row">
+        <div class="one-row">
             <h1>Color</h1>
             <div>
                 <div class="block" style="font-size: 14px; color: #2c3e50;">正常色：#2c3e50</div>
@@ -35,7 +35,7 @@
                 <div class="block" style="font-size: 14px; color: #0d6bd9;">链接色：#0d6bd9</div>
             </div>
         </div>
-        <div class="row">
+        <div class="one-row">
             <h1>Weight</h1>
             <div>
                 <div class="block" style="font-weight: 600">着重：600</div>
@@ -43,7 +43,7 @@
                 <div class="block" style="font-weight: 300">辅助：300</div>
             </div>
         </div>
-        <div class="row">
+        <div class="one-row">
             <h1>常用字形</h1>
             <div>
                 <div class="block com-lt-font">特大标题文字</div>

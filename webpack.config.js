@@ -6,7 +6,7 @@ function resolve (dir) {
 }
 
 const env = process.env.NODE_ENV
-const isDoc = env === 'doc'
+const DOC = env === 'doc'
 const RELEASE = env === 'production'
 
 // 开发：main.js 打包入口 widgets/index.js
@@ -14,8 +14,8 @@ const RELEASE = env === 'production'
 module.exports = {
   entry: RELEASE ? './src/widget.js' : './src/main.js',
   output: {
-    path: isDoc ? path.resolve(__dirname, './docs') : path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: DOC ? path.resolve(__dirname, './docs') : path.resolve(__dirname, './dist'),
+    publicPath: DOC ? '' : '/dist/',
     filename: 'build.js',
     libraryTarget: 'umd'
   },

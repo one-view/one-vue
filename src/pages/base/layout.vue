@@ -1,8 +1,8 @@
 <style lang="scss" scoped>
 
-.row{
+.one-row{
   /* contains col-lg in class name */
-  [class*='col-']{}
+  [class*='one-col-']{}
   .module{
     padding: 15px;
     background: #eee;
@@ -16,10 +16,10 @@
 <div class="panel panel-layout">
   <h1>布局模式: Layout/Module</h1>
   <div class="pane">
-    <template v-for="item in demo">
-      <div class="row">
-        <template v-for="col in item">
-          <div :class="['col-' + col]">
+    <template v-for="(item, index) in demo">
+      <div class="one-row" :key="index">
+        <template v-for="(col, index) in item">
+          <div :class="['one-col-' + col]" :key="index">
             <div class="module">{{ col }}</div>
           </div>
         </template>

@@ -57,14 +57,14 @@ hr{
 }
 /* 浮动设置-END */
 
-.row{
+.one-row{
     @extend .cf;
     width: 100%;
 }
 
 $num: 25;
 @for $i from 1 to $num{
-    .col-#{$i}{
+    .one-col-#{$i}{
         $w: 100% * $i / ($num - 1);
         float: left;
         width: $w;
