@@ -36,6 +36,26 @@ export default {
     padding: 15px 30px;
   }
 }
+/* 滚动设置 */
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: #f8f8f8;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+  /*background-color: #666;*/
+  /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);*/
+}
+// .overscroll {
+//     overflow-y: scroll;
+//     -webkit-overflow-scrolling: touch;
+//  }
+// ::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//     border-radius: 10px;
+// }
+/* 滚动设置-END */
 a{
   color: #f50;
 }

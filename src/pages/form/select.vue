@@ -4,7 +4,7 @@
     <br>
     <div class="one-form">
       <one-block title="选择">
-        <one-select :option="option.opts" v-model="form.select" :max="12" @select="afterSelect"></one-select>
+        <one-select :option="option.opts" v-model="form.select" :max="6" @select="afterSelect"></one-select>
       </one-block>
       <br>
       <one-block title="选择2">

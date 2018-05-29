@@ -9,6 +9,15 @@
         .one-select-content{
             position: relative;
         }
+        /* 滚动设置 */
+        ::-webkit-scrollbar {
+            width: 2px;
+            background-color: #f2f2f2;
+        }
+        ::-webkit-scrollbar-thumb {
+          background-color: #bbb;
+        }
+        /* 滚动设置-END */
         .open{
           z-index: 2;
           .one-selected{
