@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
 
-.v-toast{
+.one-toast{
   position: fixed;
   left: 0;
   top: 0;
@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
   &-content{
     // transform: translateX(-50%) translateY(-50%);
     min-width: 200px;
@@ -29,11 +30,9 @@
 <template>
 
 <transition name="fade">
-  <div class="v-toast" v-show="show">
-    <div class="v-toast-content" :style="sizeStyle">
+  <div class="one-toast" v-show="show">
+    <div class="one-toast-content" :style="sizeStyle">
       <div v-html="context"></div>
-    </div>
-    <div class="v-bg">
     </div>
   </div>
 </transition>
