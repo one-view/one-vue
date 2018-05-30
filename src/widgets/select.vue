@@ -84,7 +84,6 @@
     .one-options{
         display: none;
         position: absolute;
-        left: 0;
         top: $h + 1px;
         background-color: #fff;
         border: 1px solid #ddd;
@@ -166,6 +165,10 @@
             value: 'value'
           }
         }
+      },
+      position: {
+        type: String,
+        default: 'left'
       }
     },
     watch: {
@@ -180,10 +183,12 @@
     computed: {
       optionsStyle () {
         let length = this.option.length
+        let isLeft = this.position === 'left'
         let cls = length >= this.max ? {
           'overflow-y': 'scroll',
           'height': 40 * this.max + 'px'
         } : {}
+        cls[isLeft ? 'left' : 'right'] = 0
         return cls
       },
       selected () {
