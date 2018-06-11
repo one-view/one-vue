@@ -62,19 +62,3 @@ select {
     font-size: inherit;
     font-weight: inherit;
 }
-th,td{
-    padding: 10px;
-}
-
-html {
-    font-size: 62.5%;
-    -webkit-text-size-adjust: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-body {
-    font-family: -apple-system,"PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,sans-serif;
-    font-size: 1.4rem;
-    background-color: #FFF;
-    overflow-x: hidden;
-    position: relative;
-}

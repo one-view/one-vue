@@ -7,6 +7,7 @@
     font-size: 15px;
   }
   &-body{
+    font-size: 15px;
     // & > .one-collapse {}
   }
   &-active{

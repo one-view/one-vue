@@ -1,4 +1,9 @@
 .one-checkbox {
+    *,
+    *:before,
+    *:after{
+        box-sizing: border-box;
+    }
     $h: 32px;
     $c: #4181e0;
     display: block;

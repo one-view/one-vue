@@ -1,6 +1,11 @@
 <style lang="scss">
 
     .one-textarea{
+        *,
+        *:before,
+        *:after{
+            box-sizing: border-box;
+        }
         position: relative;
         textarea{
             display: block;
@@ -13,6 +18,7 @@
             outline: none;
             transition: border .2s ease;
             line-height: 24px;
+            font-size: 14px;
             &:focus{
                 border-color: #488EF1;
             }
@@ -23,6 +29,7 @@
             bottom: 10px;
             font-size: 12px;
             color: #999;
+            line-height: 1.2;
             .warning{
                 color: #da5454;
             }

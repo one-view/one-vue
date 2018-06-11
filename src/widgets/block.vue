@@ -24,6 +24,7 @@
             line-height: $h;
             font-weight: 500;
             color: #666;
+            font-size: 14px;
         }
     }
     .one-part{
@@ -37,6 +38,7 @@
         border-radius: 3px;
         outline: none;
         transition: border .2s ease;
+        font-size: 14px;
         &:focus{
             border:1px solid #488EF1 !important;
             box-shadow: none !important;

@@ -1,10 +1,10 @@
 @charset 'utf-8';
 
-*,
-*:before,
-*:after{
-    box-sizing: border-box;
-}
+// *,
+// *:before,
+// *:after{
+//     box-sizing: border-box;
+// }
 
 a{
   text-decoration: none;
@@ -61,9 +61,9 @@ $num: 25;
 
 /* 手持设备 */
 @media screen and (max-width:750px) {
-    $num: 13;
+    $num: 25;
     @for $i from 1 to $num{
-        .col-#{$i}{
+        .one-col-#{$i}{
             width: 100%;
         }
     }
