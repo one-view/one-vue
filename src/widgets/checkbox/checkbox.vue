@@ -1,7 +1,7 @@
 <style src="./style.scss" lang="scss" scoped></style>
 
 <template>
-<div class="one-checkbox" :class="{'one-checkbox-disable': disable}">
+<div class="one-checkbox" :class="[{'one-checkbox-disable': disable}, 'one-checkbox-' + ui]" >
     <ul>
         <li :class="{'on': val}" @click="check()">
             <i aria-hidden="true"></i>
@@ -20,6 +20,7 @@ export default {
     }
   },
   computed: {
+    
   },
   props: {
     textTrue: {
@@ -37,6 +38,10 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    ui: {
+      type: String,
+      default: 'default'
     },
     disable: {
       type: Boolean,

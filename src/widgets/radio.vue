@@ -21,22 +21,27 @@ $color: #4181e0;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-sizing: border-box;
+    $width: 10px;
+    $offset: ($w - $width) /2 - 1;
+    transition: border .2s ease;
+    &:after {
+      content: '';
+      position: absolute;
+      left: $offset;
+      top: $offset;
+      width: $width;
+      height: $width;
+      border-radius: $w;
+      // background-color: $colo;
+      box-sizing: border-box;
+      transition: background .2s ease;
+    }
   }
   .on {
     i {
-      $width: 10px;
-      $offset: ($w - $width) /2 - 1;
       border: 1px solid $color;
-      &:after {
-        content: '';
-        position: absolute;
-        left: $offset;
-        top: $offset;
-        width: $width;
-        height: $width;
-        border-radius: $w;
+      &:after{
         background-color: $color;
-        box-sizing: border-box;
       }
     }
   }

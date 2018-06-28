@@ -1,7 +1,7 @@
 <style src="./style.scss" lang="scss" scoped></style>
 
 <template>
-<div class="one-checkbox" :class="{'one-checkbox-disable': disable, 'one-checkbox-ui-button': isUiButton}">
+<div class="one-checkbox" :class="[{'one-checkbox-disable': disable}, 'one-checkbox-ui-' + ui]">
     <ul class="cf">
         <li v-for="(item, $index) in selectValue" :key="$index" @click="check(item)" :class="{'on': item.checked}">
             <i aria-hidden="true"></i>
@@ -33,9 +33,6 @@ export default {
         elem.checked = this.val.indexOf(elem.value) > -1
       })
       return this.option
-    },
-    isUiButton () {
-      return this.ui === 'button'
     }
   },
   watch: {

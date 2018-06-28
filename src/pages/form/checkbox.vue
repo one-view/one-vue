@@ -4,6 +4,9 @@
     <one-block title="勾选">
       <one-checkbox v-model="form.check"></one-checkbox>
     </one-block>
+    <one-block title="勾选2">
+      <one-checkbox v-model="form.check" ui="slider" :show-text="false"></one-checkbox>
+    </one-block>
     <one-block title="多选">
       <one-checkboxes v-model="form.checks" :option="option.checkboxes"></one-checkboxes>
     </one-block>
