@@ -9,8 +9,8 @@
         position: relative;
         textarea{
             display: block;
-            min-width: 240px;
-            height: 120px;
+            min-width: 200px;
+            height: 100px;
             border: 1px solid #ddd;
             border-radius: 3px;
             padding: 10px;

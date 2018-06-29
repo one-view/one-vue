@@ -34,7 +34,7 @@
       .one-select-disable{
           .one-selected{
               border: 1px solid transparent !important;
-              background-color: #f8f8f8;
+              background-color: #eee;
               padding: 8px 16px;
               i {
                 display: none;
