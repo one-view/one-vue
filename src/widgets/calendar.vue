@@ -70,7 +70,7 @@
 
     .one-day{
       display: inline-block;
-      width: 1/7 * 100 + %;
+      width: 14.285714285714285%;
       height: 36px;
       text-align: center;
       cursor: pointer;

@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     height: 100%;
-    z-index: 999;
+    z-index: 99999;
     overflow-y: auto;
     overflow-x: hidden;
     .one-modal-bg {
