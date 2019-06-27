@@ -46,7 +46,7 @@
 </style>
 
 <template>
-    <div class="one-date-picker" @click="toggle">
+    <div class="one-date-picker" @click="toggle" ref="datepicker">
         <div class="one-input" :class="{'active': show}">
             <div class="inner-input">
                 <span>{{val}}</span>
@@ -102,16 +102,13 @@
         this.$emit('modify', val)
       },
       show (val) {
-        if (val) {
-          document.addEventListener('click', this.hide, false)
-        } else {
-          document.removeEventListener('click', this.hide, false)
-        }
+        let method = val ? 'addEventListener' : 'removeEventListener'
+        document[method]('click', this.hide, false)
       }
     },
     methods: {
       hide (e) {
-        if (this.$refs.calendar && !this.$refs.calendar.contains(e.target)) {
+        if (this.$refs.datepicker && !this.$refs.datepicker.contains(e.target)) {
           this.show = false
         }
       },
