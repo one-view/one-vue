@@ -36,7 +36,7 @@
     &-danger {
       $c: #fa4141;
       background-color: #feeded;
-      border-color: #f9d5d5 - #111;
+      border-color: #e8c4c4;
     }
     &-warning {
       $c: #fffbdf;

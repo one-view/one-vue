@@ -72,15 +72,15 @@
             color: #fff;
             transition: background .2s ease;
             &:hover{
-                background-color: $color + #111;
-                border-color: $color - #080808;
+                background-color: lighten($color: $color, $amount: 10);
+                border-color: darken($color: $color, $amount: 2);
                 color: #fff;
             }
             &:focus{
                 border: 1px solid $color !important;
             }
             &:active{
-                background-color: $color - #080808;
+                background-color: darken($color: $color, $amount: 2);
             }
         }
         @mixin btnLineColor($color){
@@ -90,7 +90,7 @@
             transition: background .2s ease, color .2s ease;
             &:hover{
                 background-color: #f8f8f8;
-                color: $color - #222;
+                color: darken($color: $color, $amount: 10);
             }
             &:active{
                 background-color: $color;

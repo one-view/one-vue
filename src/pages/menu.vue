@@ -35,7 +35,7 @@ $width: 150px;
   .side-menu{
     width: $width;
     .one-collapse-head{
-      border-bottom: 1px solid $dark - #111;
+      border-bottom: 1px solid darken($color: $dark, $amount: 3);
     }
   }
   // text-align: center;
@@ -47,10 +47,10 @@ $width: 150px;
       padding: 12px 12px;
       color: #fff;
       display: block;
-      background-color: $dark - #111;
+      background-color: darken($color: $dark, $amount: 3);
       transition: background .3s ease;
       &:hover{
-        background-color: $dark - #080808;
+        background-color: darken($color: $dark, $amount: 2);
       }
       &.router-link-active{
         background-color: #f50;
@@ -71,10 +71,10 @@ $width: 150px;
     <div class="side-menu-wrapper">
       <div class="side-menu">
         <one-collapse-group :accordion="false">
-          <template v-for="item, key in menu">
-            <one-collapse :name="item.name">
+          <template v-for="(item, key) in menu">
+            <one-collapse :name="item.name" :key="key">
               <ul class="submenu">
-                <li v-for="link in item.links">
+                <li v-for="(link, idx) in item.links" :key="idx">
                   <router-link :to="{ path: `/${link}` }">{{ link }}</router-link>
                 </li>
               </ul>

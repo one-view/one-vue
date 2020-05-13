@@ -36,9 +36,9 @@ export default {
   box-shadow: 0 0 10px rgba(20,20,20,.5);
   h3{
     padding: 8px 16px;
-    background-color: #282c34 - #080808;
+    background-color: darken($color: #282c34, $amount: 2);
     margin: 0;
-    color: #282c34 + #555;
+    color: lighten($color: #282c34, $amount: 50);
     text-align: left;
     font-size: 18px;
   }

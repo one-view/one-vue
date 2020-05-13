@@ -12,7 +12,6 @@ import 'highlight.js/styles/atom-one-dark.css'
 window.hljs = hljs
 
 Vue.use(one)
-console.log(demo)
 console.log(one)
 Vue.use(infoTable)
 Vue.config.productionTip = false

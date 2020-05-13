@@ -41,7 +41,7 @@
       border-radius:3px;
       cursor: pointer;
       &:hover{
-        background-color: $c - #111;
+        background-color: darken($color: $c, $amount: 3);
       }
       &:after{
         content: '';
@@ -103,8 +103,8 @@
       }
       &.one-day-disabled{
         span{
-          background-color: $color + #333;
-          border-color: $color + #333;
+          background-color: lighten($color: $color, $amount: 10);
+          border-color: lighten($color: $color, $amount: 10);
         }
       }
     }
@@ -180,12 +180,12 @@
       <a class="one-control one-next" @click="changeMonth(1)">next</a>
     </div>
     <div class="one-weekdays">
-      <span v-for="item in weekdays" class="one-day">
+      <span v-for="(item, index) in weekdays" class="one-day" :key="index">
         {{ item }}
       </span>
     </div>
     <div class="one-days">
-      <div v-for="item in days" @mousedown="select(item)" class="one-day"
+      <div v-for="(item, index) in days" @mousedown="select(item)" :key="index" class="one-day"
         :class="{'one-day-prev': item.offset < 0,
            'one-day-next': item.offset > 0,
            'one-day-today': item.isToday,

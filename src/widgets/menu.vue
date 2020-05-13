@@ -23,7 +23,7 @@
             }
         }
         .one-collapse .one-collapse-head{
-            border-bottom: 1px solid $dark - #111;
+            border-bottom: 1px solid darken($color: $dark, $amount: 3);
         }
         .name{
             padding: 12px 12px;
@@ -41,10 +41,10 @@
 <template>
     <div class="one-menu" :class="uiClass">
         <one-collapse-group :accordion="accordion">
-            <template v-for="item, key in data">
-                <one-collapse :name="getTitle(item)">
+            <template v-for="(item, key) in data"> 
+                <one-collapse :name="getTitle(item)" :key="key">
                     <ul class="submenu">
-                        <li v-for="it in getChildren(item)">
+                        <li v-for="(it, idx) in getChildren(item)" :key="idx">
                             <router-link :to="{ path: `${getLink(it)}` }">{{ getTitle(it) }}</router-link>
                         </li>
                     </ul>
