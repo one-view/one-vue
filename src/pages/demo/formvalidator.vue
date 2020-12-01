@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
 .text-danger{
   display: inline-block;
   padding: 0 5px;

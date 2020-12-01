@@ -1,6 +1,6 @@
-<style lang="scss">
+<style lang="less">
   .one-calendar{
-    $c: #3c61bf;
+    @c: #3c61bf;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 15px;
@@ -17,7 +17,7 @@
       box-sizing: border-box;
     }
     .one-month{
-      background-color: $c;
+      background-color: @c;
       text-align: center;
       margin: -10px -10px 10px;
       padding: 10px;
@@ -41,7 +41,7 @@
       border-radius:3px;
       cursor: pointer;
       &:hover{
-        background-color: $c - #111;
+        background-color: @c - #111;
       }
       &:after{
         content: '';
@@ -89,22 +89,22 @@
       color: #ccc;
     }
     .one-day-today{
-      // background-color: $c;
+      // background-color: @c;
       span{
-        border-color: $c;
+        border-color: @c;
       }
     }
     .one-day-selected{
-      $color: #ff5b28;
+      @color: #ff5b28;
       span{
-        background-color: $color;
-        border-color: $color;
+        background-color: @color;
+        border-color: @color;
         color: #fff;
       }
       &.one-day-disabled{
         span{
-          background-color: $color + #333;
-          border-color: $color + #333;
+          background-color: @color + #333;
+          border-color: @color + #333;
         }
       }
     }
@@ -132,7 +132,7 @@
         outline: none;
         transition: border .2s ease;
         &:focus{
-          border-color: $c;
+          border-color: @c;
         }
       }
       input[type=number]::-webkit-inner-spin-button,
@@ -152,12 +152,12 @@
       padding: 2px;
     }
     .one-day{
-      $r: 30px;
-      height: $r;
+      @r: 30px;
+      height: @r;
       span{
-        width: $r;
-        height: $r;
-        line-height: $r;
+        width: @r;
+        height: @r;
+        line-height: @r;
       }
     }
     .one-time{
@@ -180,13 +180,12 @@
       <a class="one-control one-next" @click="changeMonth(1)">next</a>
     </div>
     <div class="one-weekdays">
-      <span v-for="item in weekdays" class="one-day">
+      <span v-for="(item, index) in weekdays" class="one-day" :key="index">
         {{ item }}
       </span>
     </div>
     <div class="one-days">
-      <div v-for="item in days" @mousedown="select(item)" class="one-day"
-        :class="{'one-day-prev': item.offset < 0,
+      <div v-for="(item, index) in days" :key="index" @mousedown="select(item)" class="one-day" :class="{'one-day-prev': item.offset < 0,
            'one-day-next': item.offset > 0,
            'one-day-today': item.isToday,
            'one-day-selected': item.isSelected,
@@ -440,7 +439,6 @@
 
         this.$emit('input', this.val)
         this.$emit('select', this.val)
-        this.$emit('modify', this.val)
       },
 
       changeMonth (offset) {

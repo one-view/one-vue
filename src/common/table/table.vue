@@ -31,7 +31,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .info-table{
   table{
     width: 100%;

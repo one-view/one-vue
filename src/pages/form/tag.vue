@@ -1,16 +1,15 @@
 <template>
   <div class="panel">
     <h1>示例</h1>
-    <div class="one-form">
+    <one-form>
       <one-block title="输入项" width="100px">
         <one-tag v-model="form.tags" @modify="change"></one-tag>
       </one-block>
       <one-block width="100px">
         {{ form.tags }}
       </one-block>
-    </div>
+    </one-form>
 
-    <br>
     <br>
 
     <info-table :head="props.head" :body="props.body"></info-table>
@@ -47,6 +46,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

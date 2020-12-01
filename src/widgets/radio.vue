@@ -1,11 +1,11 @@
-<style lang="scss" scoped>
-$w: 20px;
-$h: 32px;
-$color: #4181e0;
+<style lang="less" scoped>
+@w: 20px;
+@h: 32px;
+@color: #4181e0;
 .one-radio {
   li {
     float: left;
-    line-height: $h;
+    line-height: @h;
     padding: 0 0 0 30px;
     margin-right: 20px;
     position: relative;
@@ -15,47 +15,47 @@ $color: #4181e0;
   i {
     position: absolute;
     left: 0;
-    top: ($h - $w) / 2;
-    width: $w;
-    height: $w;
+    top: (@h - @w) / 2;
+    width: @w;
+    height: @w;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-sizing: border-box;
-    $width: 10px;
-    $offset: ($w - $width) /2 - 1;
+    @width: 10px;
+    @offset: (@w - @width) /2 - 1;
     transition: border .2s ease;
     &:after {
       content: '';
       position: absolute;
-      left: $offset;
-      top: $offset;
-      width: $width;
-      height: $width;
-      border-radius: $w;
-      // background-color: $colo;
+      left: @offset;
+      top: @offset;
+      width: @width;
+      height: @width;
+      border-radius: @w;
+      // background-color: @colo;
       box-sizing: border-box;
       transition: background .2s ease;
     }
   }
   .on {
     i {
-      border: 1px solid $color;
+      border: 1px solid @color;
       &:after{
-        background-color: $color;
+        background-color: @color;
       }
     }
   }
-  &.one-radio-ui-line {
+  &.one-radio-type-line {
     li {
       border: 1px solid #e8e8e8;
-      line-height: $h - 2;
+      line-height: @h - 2;
       padding: 0 10px;
       margin: 0;
       margin-right: -1px;
       background-color: #fff;
       &.on {
-        background-color: $color;
-        border-color: $color;
+        background-color: @color;
+        border-color: @color;
         color: #fff;
       }
       &:first-child{
@@ -69,13 +69,13 @@ $color: #4181e0;
       }
     }
   }
-  &.one-radio-ui-button{
+  &.one-radio-type-button{
     li {
       padding: 0 10px;
       margin: 0;
       &.on {
-        background-color: $color;
-        border-color: $color;
+        background-color: @color;
+        border-color: @color;
         border-radius: 3px;
         color: #fff;
       }
@@ -101,8 +101,9 @@ $color: #4181e0;
 </style>
 
 <template>
-  <div class="one-radio" :class="{'one-radio-disable': disable, 'one-radio-ui-line': isUiLine, 'one-radio-ui-button': isUiButton}">
-    <ul class="cf">
+  <div class="one-radio" :class="classNames">
+    <p v-if="text">{{ selected.label }}</p>
+    <ul v-else class="cf">
       <li v-for="(item, index) in option" @click="select(item)" :class="{'on': item.value === selected.value}" :key="index">
         <i aria-hidden="true"></i>
         <span>{{ item.label }}</span>
@@ -122,13 +123,20 @@ $color: #4181e0;
     computed: {
       selected () {
         let matchOptions = this.option.filter((elem, index) => elem.value === this.val)
-        return matchOptions.length ? matchOptions[0] : {value: null}
+        return matchOptions.length ? matchOptions[0] : { value: null }
       },
-      isUiLine () {
-        return this.ui === 'line'
+      isTypeLine () {
+        return this.type === 'line'
       },
-      isUiButton () {
-        return this.ui === 'button'
+      isTypeButton () {
+        return this.type === 'button'
+      },
+      classNames () {
+        const names = []
+        if (this.disable) names.push('one-radio-disable')
+        if (this.isTypeLine) names.push('one-radio-type-line')
+        if (this.isTypeButton) names.push('one-radio-type-button')
+        return names
       }
     },
     props: {
@@ -144,7 +152,11 @@ $color: #4181e0;
         type: Boolean,
         default: false
       },
-      ui: {
+      text: {
+        type: Boolean,
+        default: false
+      },
+      type: {
         type: String,
         default: 'default'
       }
@@ -152,7 +164,6 @@ $color: #4181e0;
     watch: {
       value (newValue) {
         this.val = newValue
-        this.$emit('modify', newValue)
       }
     },
     methods: {

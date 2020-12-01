@@ -24,15 +24,15 @@ const components = [
 const comps = {}
 
 components.forEach(name => {
-  let Component = require(`./${name}`)
+  const Component = require(`./${name}`)
   Component.install = Vue => {
     Vue.component(Component.name, Component)
   }
   comps[name] = Component
 })
 
-module.exports = comps
 export default {
+  comps,
   $msg: (config) => {
     createInstance()
   }

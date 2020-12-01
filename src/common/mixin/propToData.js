@@ -1,4 +1,4 @@
-export default ({prop, data}) => {
+export default ({ prop, data }) => {
   return {
     mounted () {
       let propTemp = this[prop]

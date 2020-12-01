@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
   .transition-collapse {
     transition: opacity 0.2s ease, height 0.25s ease, padding-top 0.25s ease, padding-bottom 0.25s ease;
   }

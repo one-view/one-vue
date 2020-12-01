@@ -177,7 +177,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="less">
     .data-show {
         height: 40px;
         margin-left: 20px;

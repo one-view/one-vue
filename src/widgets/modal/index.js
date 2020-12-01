@@ -1,11 +1,11 @@
-import './style.scss'
+import './style.less'
 import modal from './modal'
 import confirm from './confirm'
 import alert from './alert'
 import tip from './tip'
 import toast from './toast'
 
-module.exports = {
+export default {
   modal,
   confirm,
   alert,

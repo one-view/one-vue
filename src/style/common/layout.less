@@ -1,0 +1,74 @@
+@charset 'utf-8';
+
+// *,
+// *:before,
+// *:after{
+//     box-sizing: border-box;
+// }
+
+a{
+  text-decoration: none;
+}
+
+hr{
+  height: 1px;
+  background-color: #ddd;
+  border: 0;
+}
+
+/* 浮动设置 */
+.cf{
+    zoom: 1;
+    &:before,
+    &:after{
+        content: '';
+        display: table;
+    }
+    &:after{
+        clear: both;
+    }
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+/* 浮动设置-END */
+
+.one-row{
+    .cf;
+    width: 100%;
+}
+
+@num: 25;
+.generate-columns(@num);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+    .one-col-@{i} {
+        float: left;
+        width: 100% * @i / (@n - 1);
+    }
+    .generate-columns(@n, (@i + 1));
+}
+
+.layout{
+    margin: 0 auto;
+}
+@media screen and (max-width:1200px) {
+    .layout{
+        width: 100%;
+    }
+}
+
+/* 手持设备 */
+@media screen and (max-width:750px) {
+    // $num: 25;
+    // @for $i from 1 to $num{
+    //     .one-col-#{$i}{
+    //         width: 100%;
+    //     }
+    // }
+    .willnone{
+        display: none;
+    }
+}

@@ -5,6 +5,7 @@
     <one-block title="表单">
       <one-textarea v-model="context"></one-textarea>
     </one-block>
+    <one-textarea v-model="context"></one-textarea>
     <br>
     <p>内容：{{ context }}</p>
     <br>
@@ -34,5 +35,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

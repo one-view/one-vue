@@ -1,4 +1,4 @@
-import './style/ui.scss'
+import './style/ui.less'
 
 import codeSnippet from './widgets/codeSnippet'
 import transitionCollapse from './widgets/transitionCollapse'
@@ -20,10 +20,18 @@ import modals from './widgets/modal'
 import checkboxCompnent from './widgets/checkbox'
 import tag from './widgets/tag'
 
-const {checkbox, checkboxes} = checkboxCompnent
+import Layout from './widgets/layout'
+import Form from './widgets/form'
+
+const { checkbox, checkboxes } = checkboxCompnent
+const { Row, Col } = Layout
 
 // 注册 Vue.use 调用方法
 const install = Vue => {
+  Vue.component(Row.name, Row)
+  Vue.component(Col.name, Col)
+  Vue.component(Form.name, Form)
+
   Vue.component(codeSnippet.name, codeSnippet)
   Vue.component(transitionCollapse.name, transitionCollapse)
   Vue.component(collapse.name, collapse)
@@ -48,7 +56,7 @@ const install = Vue => {
   // 挂载实例到dom
   const globalModal = ['confirm', 'tip', 'alert', 'toast']
   globalModal.forEach(item => {
-    let instance = Vue.prototype[`$${item}`] = new Vue(modals[item]).$mount()
+    const instance = Vue.prototype[`$one${item}`] = new Vue(modals[item]).$mount()
     document.body.appendChild(instance.$el)
   })
 }

@@ -2,17 +2,20 @@
   <div class="panel">
     <h1>示例：Radio</h1>
     <br>
-    <div class="one-form">
-      <one-block title="dmeo">
-        <one-radio :option="option.radios" v-model="form.radio"></one-radio>
+    <one-form>
+      <one-block title="type line">
+        <one-radio :option="option.radios" v-model="form.radio" type="default"></one-radio>
       </one-block>
-      <one-block title="ui-line">
-        <one-radio :option="option.radios" v-model="form.radio" ui="line"></one-radio>
+      <one-block title="type line">
+        <one-radio :option="option.radios" v-model="form.radio" type="line"></one-radio>
       </one-block>
-      <one-block title="ui-button">
-        <one-radio :option="option.radios" v-model="form.radio" ui="button"></one-radio>
+      <one-block title="type button">
+        <one-radio :option="option.radios" v-model="form.radio" type="button"></one-radio>
       </one-block>
-    </div>
+      <one-block title="type button">
+        <one-radio :option="option.radios" v-model="form.radio" :text="true"></one-radio>
+      </one-block>
+    </one-form>
     <br>
     <p>选中：{{ form.radio }}</p>
     <br>
@@ -78,5 +81,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

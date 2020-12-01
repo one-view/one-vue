@@ -1,8 +1,8 @@
 <template>
-    <button class="one-btn" :class="{disable: disable || loading}" @click="event => $emit('click', event)">
-        <i v-if="loading" title="refresh animate-spin" class="loading icon icon-refresh animate-spin"></i>
-        <slot></slot>
-    </button>
+<button class="one-btn" :class="{disable: disable || loading}" @click="event => $emit('click', event)">
+  <i v-if="loading" title="refresh animate-spin" class="loading icon icon-refresh animate-spin"></i>
+  <slot></slot>
+</button>
 </template>
 
 <script>
@@ -24,12 +24,12 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="less">
     .one-btn{
-        $green: #49c970;
-        $yellow: #ffbf00;
-        $blue: #3e7cf4;
-        $red: #eb6a51;
+        @green: #49c970;
+        @yellow: #ffbf00;
+        @blue: #3e7cf4;
+        @red: #eb6a51;
         display: inline-block;
         box-sizing: border-box;
         background: #fff;
@@ -66,60 +66,60 @@
             padding: 14px 24px;
             font-size: 18px;
         }
-        @mixin btnBlockColor($color){
-            background-color: $color;
-            border-color: $color;
+        .btnBlockColor(@color){
+            background-color: @color;
+            border-color: @color;
             color: #fff;
             transition: background .2s ease;
             &:hover{
-                background-color: $color + #111;
-                border-color: $color - #080808;
+                background-color: @color + #111;
+                border-color: @color - #080808;
                 color: #fff;
             }
             &:focus{
-                border: 1px solid $color !important;
+                border: 1px solid @color !important;
             }
             &:active{
-                background-color: $color - #080808;
+                background-color: @color - #080808;
             }
         }
-        @mixin btnLineColor($color){
+        .btnLineColor(@color){
             background-color: #fff;
-            border-color: $color;
-            color: $color;
+            border-color: @color;
+            color: @color;
             transition: background .2s ease, color .2s ease;
             &:hover{
                 background-color: #f8f8f8;
-                color: $color - #222;
+                color: @color - #222;
             }
             &:active{
-                background-color: $color;
+                background-color: @color;
                 color: #fff;
             }
         }
         &.btn-success{
-            @include btnBlockColor($green);
+            .btnBlockColor(@green);
         }
         &.btn-danger{
-            @include btnBlockColor($red);
+          .btnBlockColor(@red);
         }
         &.btn-warn{
-            @include btnBlockColor($yellow);
+          .btnBlockColor(@yellow);
         }
         &.btn-info{
-            @include btnBlockColor($blue);
+          .btnBlockColor(@blue);
         }
         &.btn-line.btn-success{
-            @include btnLineColor($green);
+          .btnLineColor(@green);
         }
         &.btn-line.btn-danger{
-            @include btnLineColor($red);
+          .btnLineColor(@red);
         }
         &.btn-line.btn-warn{
-            @include btnLineColor($yellow);
+          .btnLineColor(@yellow);
         }
         &.btn-line.btn-info{
-            @include btnLineColor($blue);
+          .btnLineColor(@blue);
         }
         &.btn.disable{
             color: #c0c4cc;

@@ -1,19 +1,19 @@
-<style lang="scss" scoped>
-
+<style lang="less">
+@d: 8px;
 .one-collapse{
   &-head{
-    padding: 10px;
+    padding: 16px;
     position: relative;
-    font-size: 15px;
+    font-size: 14px;
   }
   &-body{
-    font-size: 15px;
+    font-size: 14px;
     // & > .one-collapse {}
   }
   &-active{
     & > .one-collapse-head {
       .one-collapse-icon-arrow{
-        transform: rotate(135deg);
+        transform: translateY(-@d/2) rotate(135deg);
       }
     }
   }
@@ -41,16 +41,15 @@
   }
 }
 .one-collapse-icon-arrow{
-  $d: 8px;
-  width: $d;
-  height: $d;
+  width: @d;
+  height: @d;
   position: absolute;
-  transform: rotate(45deg);
+  transform: translateY(-@d/2) rotate(45deg);
   transition: transform .3s ease;
   border-top: 1px solid #eee;
   border-right: 1px solid #eee;
   right: 16px;
-  top: 16px;
+  top: 50%;
 }
 
 </style>
@@ -58,12 +57,13 @@
 <template>
 <div class="one-collapse" :class="[activeCls, uiCls]">
   <div class="one-collapse-head" @click="toggle">
+    <slot name="head"></slot>
     <span>{{ name }}</span>
     <i class="one-collapse-icon-arrow"></i>
   </div>
   <transition-collapse>
     <div class="one-collapse-body" v-show="active">
-      <slot></slot>
+      <slot name="body"></slot>
     </div>
   </transition-collapse>
 </div>

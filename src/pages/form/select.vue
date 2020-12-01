@@ -2,16 +2,15 @@
   <div class="panel">
     <h1>示例：选择</h1>
     <br>
-    <div class="one-form">
+    <one-form>
       <one-block title="选择">
         <one-select :option="option.opts" v-model="form.select" :max="6" @select="afterSelect" position="right"></one-select>
       </one-block>
-      <br>
       <one-block title="选择2">
         <one-select :option="option.opts2" v-model="form.select2" :proxy-name="{label:'name', value: 'id'}" placeholder="选择类别"></one-select>
         <one-select :option="option.opts" v-model="form.select3" placeholder="产品内容选择" :disable="true"></one-select>
       </one-block>
-    </div>
+    </one-form>
     <br>
     <p>选中：{{ form.select }} | {{ form.select2 }}</p>
     <br>
@@ -100,5 +99,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

@@ -193,7 +193,7 @@
       }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .one-table{
         .img-model /deep/ {
             .one-modal-outer{

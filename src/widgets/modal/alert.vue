@@ -1,7 +1,7 @@
-<style lang="scss">
+<style lang="less">
 .one-alert {
   .one-modal-control {
-      .one-btn-ok {
+      .one-btn-confirm {
           width: 100%;
           color: #3b62c7;
       }
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="one-modal-control cf">
-            <a class="one-btn one-btn-ok" @click="ok">{{ textOK }}</a>
+            <a class="one-btn one-btn-confirm" @click="confirm">{{ confirmText }}</a>
         </div>
     </div>
   </template>
@@ -39,7 +39,7 @@ export default {
     }
   },
   props: {
-    textOK: {
+    confirmText: {
       type: String,
       default: 'OK'
     },
@@ -53,7 +53,7 @@ export default {
     }
   },
   methods: {
-    ok () {
+    confirm () {
       this.close()
       this.callback()
     },

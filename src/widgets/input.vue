@@ -108,7 +108,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
     .one-input{
         *{
             box-sizing: border-box;

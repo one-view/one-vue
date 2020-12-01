@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
 .custom-div{
   padding: 50px 0;
 }
@@ -34,17 +34,17 @@
       padding: 0 10px 10px;
     }
     &-danger {
-      $c: #fa4141;
+      @c: #fa4141;
       background-color: #feeded;
       border-color: #f9d5d5 - #111;
     }
     &-warning {
-      $c: #fffbdf;
-      background-color: $c;
+      @c: #fffbdf;
+      background-color: @c;
     }
     &-info {
-      $c: #f2faff;
-      background-color: $c;
+      @c: #f2faff;
+      background-color: @c;
     }
   }
 }

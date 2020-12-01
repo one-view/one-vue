@@ -27,7 +27,7 @@ const createToast = () => {
   return component
 }
 
-module.exports = {
+export default {
   msg: createMsg,
   toast: createToast
 }

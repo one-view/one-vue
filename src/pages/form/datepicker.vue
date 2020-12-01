@@ -2,19 +2,18 @@
   <div class="panel">
     <h1>实例</h1>
     <br>
-    <div class="one-form">
+    <one-form>
       <one-block title="选择周期">
         <one-date-picker v-model="form.dateStart" :max="form.dateEnd" :range="true"></one-date-picker>
         <one-date-picker v-model="form.dateEnd" :min="form.dateStart" :range="true"></one-date-picker>
       </one-block>
-    </div>
-    <br>
-    <div class="one-form">
+    </one-form>
+    <one-form>
       <one-block title="不合法时间">
         <one-date-picker v-model="form.invalidDate" position="top"></one-date-picker>
         <span> 自动修正为当前时间</span>
       </one-block>
-    </div>
+    </one-form>
     <br>
     <p>选择： {{ form.dateStart }} ~ {{ form.dateEnd }} </p>
     <br>
@@ -68,5 +67,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     toast () {
-      this.$toast.open({
+      this.$onetoast.open({
         text: '阿发阿斯顿发阿斯 阿发阿斯顿发阿斯 <br> asdf',
         callback () {
           // window.alert(1)
@@ -51,12 +51,12 @@ export default {
       })
     },
     tip () {
-      this.$tip.open({
+      this.$onetip.open({
         text: 'asdaf <br> as',
       })
     },
     confirm () {
-      this.$confirm.open({
+      this.$oneconfirm.open({
         text: '阿斯顿 ast you there <br> asd',
         callback (flag) {
           // window.alert(flag)
@@ -64,7 +64,7 @@ export default {
       })
     },
     alert () {
-      this.$alert.open({
+      this.$onealert.open({
         text: 'this is a alert <br> asd',
         callback () {
           // window.alert('alert')
@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
     .data-show {
         height: 40px;
         margin-left: 20px;

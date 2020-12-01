@@ -2,18 +2,18 @@
     <div class="panel">
         <h1>示例</h1>
         <br>
-        <div class="one-form">
-            <one-block title="title">
-              <span>this is a title</span>
-            </one-block>
-            <one-block title="名称">
-              <input type="text">
-              <one-btn class="btn-info">upload</one-btn>
-            </one-block>
-            <one-block width="100px">
-              <input type="text">
-            </one-block>
-        </div>
+        <one-form>
+          <one-block title="title">
+            <span>this is a title</span>
+          </one-block>
+          <one-block title="名称">
+            <input type="text">
+            <one-btn class="btn-info">upload</one-btn>
+          </one-block>
+          <one-block width="100px">
+            <input type="text">
+          </one-block>
+        </one-form>
 
         <br>
         <h1>属性</h1>
@@ -58,34 +58,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-.menu {
-  position: relative;
-  &:hover {
-    .list {
-      max-height: 500px;
-      transition: max-height 0.3s ease-in;
-    }
-  }
-  .list {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
-    overflow: hidden;
-
-    li{
-      padding: 10px 30px;
-      background: #d5d5d5;
-      &:hover{
-        background: #ddd;
-      }
-    }
-    // transform: scaleY(0);
-    // transition: transform 0.3s ease-out;
-  }
-}
+<style lang="less">
 </style>

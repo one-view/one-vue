@@ -1,18 +1,26 @@
+
 <script>
 export default {
-  name: 'row',
+  name: 'one-row',
   functional: true,
-  render (createElement, context) {
-    let {children} = context
-    return createElement('div', {
-      attrs: {
-        class: 'row'
-      }
-    }, children)
+  render (h, context) {
+    return h(
+      'div',
+      {
+        class: [
+          'one-row'
+        ]
+      },
+      context.children
+    )
   }
 }
 </script>
 
-<style lang="scss">
-
+<style lang="less">
+.one-row{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
+}
 </style>

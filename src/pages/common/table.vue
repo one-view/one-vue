@@ -253,7 +253,7 @@
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .menu {
   position: relative;
   &:hover {

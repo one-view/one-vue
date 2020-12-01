@@ -29,7 +29,7 @@ export default {
   name: 'one-slider',
   data () {
     return {
-      val: getNumFromRange(this.value, 0, 100),
+      val: getNumFromRange(this.value, 0, this.max),
       elSizePostion: {}
     }
   },
@@ -39,12 +39,16 @@ export default {
       default: 1
     },
     value: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     mode: {
       type: String,
       default: 'horizontal'
+    },
+    max: {
+      type: Number,
+      default: 100
     },
     size: {
       type: [String],
@@ -54,7 +58,7 @@ export default {
   // props 传入变化后监听
   watch: {
     value (val) {
-      this.val = getNumFromRange(val, 0, 100)
+      this.val = getNumFromRange(val, 0, this.max)
     }
   },
   computed: {
@@ -64,7 +68,7 @@ export default {
     pointStyle () {
       let key = this.vertical ? 'bottom' : 'left'
       return {
-        [key]: `${this.val}%`
+        [key]: `${this.val / this.max * 100}%`
       }
     },
     sizeStyle () {
@@ -76,7 +80,7 @@ export default {
     slotActiveStyle () {
       let key = this.vertical ? 'height' : 'width'
       return {
-        [key]: `${this.val}%`
+        [key]: `${this.val / this.max * 100}%`
       }
     },
     sliderClass () {
@@ -107,13 +111,14 @@ export default {
       left = pageX - left
       top = pageY - top
 
-      let percent = this.vertical ? (1 - top / height) * 100 : left / width * 100
-      percent = percent < 0 ? 0 : percent > 100 ? 100 : parseFloat(percent.toFixed(4))
-
+      let percent = this.vertical ? (1 - top / height) * this.max : left / width * this.max
+      percent = percent < 0 ? 0 : percent > this.max ? this.max : parseFloat(percent.toFixed(4))
+      console.log(left, width, percent, this.max)
       percent = this.handleStep(percent)
 
       this.val = percent
-      this.$emit('change', this.val)
+      this.$emit('change', percent)
+      this.$emit('input', percent)
     },
     handleStep (percent) {
       let value = percent
@@ -127,9 +132,6 @@ export default {
     onDragEnd () {
       this.isDragging = false
       this.unbindGlobalEvent()
-    },
-    change (e) {
-      console.log('event', e)
     },
     bindGlobalEvent () {
       window.addEventListener('mousemove', this.onDragging)
@@ -150,10 +152,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-$h: 3px;
-$pointSize: 16px;
-$color: #3449d7;
+<style lang="less">
+@h: 3px;
+@pointSize: 16px;
+@color: #3449d7;
 .one-slider{
   position: relative;
   display: inline-block;
@@ -164,30 +166,30 @@ $color: #3449d7;
     position: absolute;
   }
   &-slot-acitve{
-    background-color: $color;
+    background-color: @color;
   }
   &-pointer{
     position: absolute;
-    width: $pointSize;
-    height: $pointSize;
-    background-color: $color;
-    border-radius: $pointSize;
+    width: @pointSize;
+    height: @pointSize;
+    background-color: @color;
+    border-radius: @pointSize;
     &:hover{
-      box-shadow: 0 0 5px $color;
+      box-shadow: 0 0 5px @color;
     }
   }
   &-horizontal{
-    height: 100%;
+    // height: 100%;
     .one-slider{
       &-slot{
-        height: $h;
+        height: @h;
         width: 100%;
-        top: -$h / 2
+        top: -@h / 2
       }
       &-pointer{
         left: 0;
-        top: -$pointSize / 2;
-        transform: translateX(-$pointSize/2);
+        top: -@pointSize / 2;
+        transform: translateX(-@pointSize / 2);
       }
     }
   }
@@ -196,14 +198,14 @@ $color: #3449d7;
     height: 256px;
     .one-slider{
       &-slot{
-        width: $h;
+        width: @h;
         height: 100%;
         bottom: 0;
       }
       &-pointer{
-        left: ($h - $pointSize) / 2;
+        left: (@h - @pointSize) / 2;
         bottom: 0;
-        transform: translateY($pointSize/2);
+        transform: translateY(@pointSize/2);
       }
     }
   }

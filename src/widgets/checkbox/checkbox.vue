@@ -1,7 +1,7 @@
-<style src="./style.scss" lang="scss" scoped></style>
+<style src="./style.less" lang="less" scoped></style>
 
 <template>
-<div class="one-checkbox" :class="[{'one-checkbox-disable': disable}, 'one-checkbox-' + ui]" >
+<div class="one-checkbox" :class="classNames" >
     <ul>
         <li :class="{'on': val}" @click="check()">
             <i aria-hidden="true"></i>
@@ -20,7 +20,12 @@ export default {
     }
   },
   computed: {
-    
+    classNames () {
+      const names = []
+      names.push(`one-checkbox-${this.type}`)
+      if (this.disable) names.push('one-checkbox-disable')
+      return names
+    }
   },
   props: {
     textTrue: {
@@ -33,13 +38,13 @@ export default {
     },
     showText: {
       type: Boolean,
-      default: true
+      default: false
     },
     value: {
       type: Boolean,
       default: false
     },
-    ui: {
+    type: {
       type: String,
       default: 'default'
     },

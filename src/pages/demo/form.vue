@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
     .one-form{
         .one-block-title{
             width: 150px !important;

@@ -1,17 +1,11 @@
-<style lang="scss" scoped>
-.one-form{
-    .one-block{
-        margin: 8px 0;
-    }
-}
+<style lang="less">
+@h: 32px;
 .one-block{
-    display: block;
+    display: flex;
     position: relative;
-    // padding: 8px 0;
     *{
         box-sizing: border-box;
     }
-    $h: 32px;
     transition: background .2s ease;
     .one-block-title,
     .one-part{
@@ -20,19 +14,18 @@
     }
     .one-block-title{
         span{
-            height: $h;
-            line-height: $h;
+            height: @h;
+            line-height: @h;
             font-weight: 500;
             color: #666;
             font-size: 14px;
         }
     }
     .one-part{
-        // padding: 2px 0;
-        line-height: $h;
+        line-height: @h;
     }
     input{
-        height: $h;
+        height: @h;
         padding: 0 10px;
         border: 1px solid #ddd;
         border-radius: 3px;
@@ -48,7 +41,7 @@
 </style>
 
 <template>
-<div class="one-block cf">
+<div class="one-block">
     <div class="one-block-title" :style="{width: width}" v-if="title">
         <span>{{ title }}</span>
     </div>

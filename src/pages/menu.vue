@@ -1,16 +1,16 @@
-<style lang="scss">
+<style lang="less">
 
-$dark: #31394a;
-$width: 150px;
+@dark: #31394a;
+@width: 200px;
 .module-menu{
   position: fixed;
   left: 0;
   top: 0;
-  width: $width;
+  width: @width;
   height: 100%;
   background-color: #2b3344;
   transition: width .2s ease;
-  &-title{
+  &-logo{
     height: 50px;
     background-color: #17c251;
     display: flex;
@@ -22,73 +22,81 @@ $width: 150px;
   }
 }
 
-.side-menu-wrapper{
-  background-color: $dark;
-  color: #fff;
-  overflow: auto;
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  .side-menu{
-    width: $width;
-    .one-collapse-head{
-      border-bottom: 1px solid $dark - #111;
-    }
-  }
-  // text-align: center;
-  .name{
-    padding: 12px 12px;
-  }
-  .submenu{
-    a{
-      padding: 12px 12px;
-      color: #fff;
-      display: block;
-      background-color: $dark - #111;
-      transition: background .3s ease;
-      &:hover{
-        background-color: $dark - #080808;
-      }
-      &.router-link-active{
-        background-color: #f50;
-        // color: $dark;
-        color: #fff;
-      }
-    }
-  }
-}
-
 </style>
 
 <template>
   <div class="module module-menu">
-    <h3 class="module-menu-title">
-      <router-link :to="{ path: '/' }">OneVue</router-link>
+    <h3 class="module-menu-logo">
+      <router-link :to="{ path: '/' }">One</router-link>
     </h3>
     <div class="side-menu-wrapper">
-      <div class="side-menu">
-        <one-collapse-group :accordion="false">
-          <template v-for="item, key in menu">
-            <one-collapse :name="item.name">
-              <ul class="submenu">
-                <li v-for="link in item.links">
-                  <router-link :to="{ path: `/${link}` }">{{ link }}</router-link>
-                </li>
-              </ul>
-            </one-collapse>
-          </template>
-        </one-collapse-group>
-      </div>
+      <one-menu :data="menu" ui="dark"></one-menu>
     </div>
   </div>
 </template>
 
 <script>
 
-import menu from './menu/data'
+// import menu from './menu/data'
+const menu = [
+  {
+    label: '基础',
+    value: '/base',
+    icon: 'icon-layout',
+    children: [
+      { label: 'layout', value: '/layout' },
+      { label: 'color', value: '/color' },
+      { label: 'iconfont', value: '/iconfont' },
+      { label: 'btn', value: '/btn' }
+    ]
+  },
+  {
+    label: '表单',
+    value: '/form',
+    icon: 'icon-detail',
+    children: [
+      { label: 'block', value: '/block' },
+      { label: 'radio', value: '/radio' },
+      { label: 'checkbox', value: '/checkbox' },
+      { label: 'textarea', value: '/textarea' },
+      { label: 'select', value: '/select' },
+      { label: 'cascader', value: '/cascader' },
+      { label: 'datepicker', value: '/datepicker' },
+      { label: 'slider', value: '/slider' },
+      { label: 'tag', value: '/tag' }
+    ]
+  },
+  {
+    label: '通知',
+    value: '/notice',
+    icon: 'icon-message',
+    children: [
+      { label: 'notify', value: '/notify' }
+    ]
+  },
+  {
+    label: '通用',
+    value: '/common',
+    icon: 'icon-wrench',
+    children: [
+      { label: 'modal', value: '/modal' },
+      { label: 'collapse', value: '/collapse' },
+      { label: 'menu', value: '/menu' },
+      { label: 'pagination', value: '/pagination' },
+      { label: 'calendar', value: '/calendar' }
+    ]
+  },
+  {
+    label: '示例',
+    value: '/demo',
+    icon: 'icon-experiment',
+    children: [
+      { label: 'form', value: '/form' },
+      { label: 'test', value: '/test' }
+    ]
+  }
+]
+
 export default {
   data () {
     return {

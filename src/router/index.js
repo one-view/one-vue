@@ -17,14 +17,13 @@ const router = {
  * @param  {[type]} let [description]
  * @return {[type]}     [description]
  */
-for (let key in menu) {
-  menu[key].links.forEach(item => {
-    let name = item.toLowerCase()
+menu.forEach(item => {
+  item.children.forEach(it => {
     router.routes.push({
-      path: `/${item}`,
-      component: () => import(`../pages/${key}/${name}`)
+      path: it.value,
+      component: () => import(`../pages${item.value}/${it.label}`)
     })
   })
-}
+})
 
 export default new Router(router)

@@ -1,7 +1,7 @@
-<style src="./style.scss" lang="scss" scoped></style>
+<style src="./style.less" lang="less" scoped></style>
 
 <template>
-<div class="one-checkbox" :class="[{'one-checkbox-disable': disable}, 'one-checkbox-ui-' + ui]">
+<div class="one-checkbox" :class="[{'one-checkbox-disable': disable}, 'one-checkbox-type-' + type]">
     <ul class="cf">
         <li v-for="(item, $index) in selectValue" :key="$index" @click="check(item)" :class="{'on': item.checked}">
             <i aria-hidden="true"></i>
@@ -53,7 +53,7 @@ export default {
       type: Boolean,
       default: false
     },
-    ui: {
+    type: {
       type: String,
       default: 'default'
     }

@@ -24,8 +24,8 @@ export default {
     let last
     let deferTimer
     return (...args) => {
-      let context = scope || this
-      let now = Date.now()
+      const context = scope || this
+      const now = Date.now()
       if (last && now < last + threshhold) {
         clearTimeout(deferTimer)
         deferTimer = setTimeout(() => {

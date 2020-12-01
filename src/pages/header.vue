@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
 
 header {
   border-bottom: 1px solid #ddd;
@@ -19,11 +19,11 @@ header {
 
 
 <template>
-
-  <div class="a">
-    tst alsdk 
+<header>
+  <div class="module module-header">
+    header
   </div>
-
+</header>
 </template>
 
 <script>

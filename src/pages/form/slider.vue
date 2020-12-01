@@ -1,14 +1,14 @@
 <template>
   <div class="panel">
     <h1>Slider</h1>
-    <div class="one-form">
+    <one-form>
       <one-block title="量值1">
         <one-slider v-model="percentA" @change="change"></one-slider>
       </one-block>
       <one-block title="量值2">
-        <one-slider v-model="percentB" :step="0.1" @change="change2"></one-slider>
+        <one-slider v-model="percentB" :step="1" :max="24" @change="change2" mode="vertical" size="100px"></one-slider>
       </one-block>
-    </div>
+    </one-form>
     <br>
     <br>
     <one-block title="数据展示">
@@ -46,15 +46,15 @@ export default {
     return {
       props,
       percentA: 97,
-      percentB: 25
+      percentB: 34
     }
   },
   methods: {
     change (val) {
-      this.percentA = val
+      // this.percentA = val
     },
     change2 (val) {
-      this.percentB = val
+      // this.percentB = val
     },
     slide (val) {
       console.log(val)
@@ -65,6 +65,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

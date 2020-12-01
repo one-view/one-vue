@@ -1,7 +1,7 @@
-import vRow from './row'
-import vCol from './col'
+import Row from './row'
+import Col from './col'
 
-export {
-  vRow,
-  vCol
+export default {
+  Row,
+  Col
 }

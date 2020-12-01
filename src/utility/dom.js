@@ -1,11 +1,11 @@
 'use strict'
 
-  /**
-   * 节点是是否包含
-   * @param  {[type]} el    [description]
-   * @param  {[type]} child [description]
-   * @return {[type]}       [description]
-   */
+/**
+ * 节点是是否包含
+ * @param  {[type]} el    [description]
+ * @param  {[type]} child [description]
+ * @return {[type]}       [description]
+ */
 export function includes (el, child) {
   if (el) {
     return el === child || el.contains(child)
@@ -42,16 +42,16 @@ export function removeClass (el, className) {
   }
 }
 
-export function scrollTop (el, from = 0, to, duration = 500) {
+export function scrollTop (el, from = 0, to = 0, duration = 500) {
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame = (
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            function (callback) {
-              return window.setTimeout(callback, 1000 / 60)
-            }
-        )
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function (callback) {
+        return window.setTimeout(callback, 1000 / 60)
+      }
+    )
   }
   const difference = Math.abs(from - to)
   const step = Math.ceil(difference / duration * 50)

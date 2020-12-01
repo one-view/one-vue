@@ -1,17 +1,17 @@
 <template lang="html">
   <div class="panel">
     <h1>示例：选择</h1>
-    <one-block title="勾选">
-      <one-checkbox v-model="form.check"></one-checkbox>
+    <one-block title="勾选" width="100px">
+      <one-checkbox v-model="form.check" type="default"></one-checkbox>
     </one-block>
-    <one-block title="勾选2">
-      <one-checkbox v-model="form.check" ui="slider" :show-text="false"></one-checkbox>
+    <one-block title="勾选2" width="100px">
+      <one-checkbox v-model="form.check" type="slider"></one-checkbox>
     </one-block>
-    <one-block title="多选">
-      <one-checkboxes v-model="form.checks" :option="option.checkboxes"></one-checkboxes>
+    <one-block title="多选" width="100px">
+      <one-checkboxes v-model="form.checks" :option="option.checkboxes" type="default"></one-checkboxes>
     </one-block>
-    <one-block title="button-style">
-      <one-checkboxes v-model="form.checks" :option="option.checkboxes" ui="button"></one-checkboxes>
+    <one-block title="按钮样式" width="100px">
+      <one-checkboxes v-model="form.checks" :option="option.checkboxes" type="button"></one-checkboxes>
     </one-block>
     <br>
     <p>单选： {{ form.check }} | 多选： {{ form.checks }} </p>
@@ -80,5 +80,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

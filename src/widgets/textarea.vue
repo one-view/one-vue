@@ -1,49 +1,47 @@
-<style lang="scss">
+<style lang="less">
 
-    .one-textarea{
-        *,
-        *:before,
-        *:after{
-            box-sizing: border-box;
-        }
-        position: relative;
-        textarea{
-            display: block;
-            min-width: 200px;
-            height: 100px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            padding: 10px;
-            // resize: none;
-            outline: none;
-            transition: border .2s ease;
-            line-height: 24px;
-            font-size: 14px;
-            &:focus{
-                border-color: #488EF1;
-            }
-        }
-        .tip{
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-            font-size: 12px;
-            color: #999;
-            line-height: 1.2;
-            .warning{
-                color: #da5454;
-            }
-        }
+.one-textarea{
+  *{
+      box-sizing: border-box;
+  }
+  width: 100%;
+  position: relative;
+  textarea{
+    display: block;
+    width: 100%;
+    height: 160px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    outline: none;
+    transition: border .2s ease;
+    line-height: 24px;
+    font-size: 14px;
+    &:focus{
+      border-color: #488EF1;
     }
+  }
+  .tip{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.2;
+    .warning{
+      color: #da5454;
+    }
+  }
+}
 
 </style>
 
 <template>
     <div class="one-textarea">
-        <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur"></textarea>
+        <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur" :maxlength="max"></textarea>
         <div class="tip" v-if="max > 0">
-            <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
-        </div>
+              <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
+          </div>
     </div>
 </template>
 
@@ -59,7 +57,7 @@ export default {
   props: {
     max: {
       type: Number,
-      default: 120
+      default: 240
     },
     value: {
       type: String,

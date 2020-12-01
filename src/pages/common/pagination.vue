@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row com-mg-btm">
-            <one-pagination :index="2" :size="10" :total="64"></one-pagination>
+            <one-pagination :index="2" :size="10" :total="92"></one-pagination>
         </div>
 
         <br>
@@ -50,5 +50,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 </style>

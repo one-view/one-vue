@@ -1,11 +1,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="less">
 .home{
-  position: fixed;
-  left: 160px;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +14,7 @@
 <template>
   <div class="home">
     <div class="content">
-      <img src="../assets/coollogo.png">
+      <img src="/src/assets/coollogo.png">
     </div>
     <one-footer></one-footer>
   </div>

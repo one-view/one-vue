@@ -1,6 +1,5 @@
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .block {
-    float: left;
     width: 200px;
     height: 100px;
     margin: 10px;
@@ -13,7 +12,6 @@
 .split{
   display: block;
   width: 100%;
-  float:left;
   margin-bottom: 30px;
 }
 
@@ -21,17 +19,17 @@
 
 <template>
     <div class="panel">
-    <div class="row com-mg-btm">
-        <h1 class="com-mg-btm">常用颜色</h1>
-        <div>
-            <div class="module cf">
-              <template v-for="item in colors">
-                <div class="split" v-if="item === 'split'"></div>
-                <div class="block" v-else :style="{backgroundColor: item}">{{ item }}</div>
-              </template>
-            </div>
-        </div>
-    </div>
+      <one-row>
+        <one-col>
+          <h1 class="com-mg-btm">常用颜色</h1>
+        </one-col>
+        <one-col grid="24">
+          <template v-for="(item, index) in colors">
+            <div class="split" v-if="item === 'split'" :key="index"></div>
+            <div class="block" v-else :style="{backgroundColor: item}" :key="index">{{ item }}</div>
+          </template>
+        </one-col>
+      </one-row>
 </div>
 </template>
 

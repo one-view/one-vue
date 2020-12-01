@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .code-presentation{
   border-radius: 10px;
   overflow: hidden;
