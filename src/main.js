@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './style/common/base.css'
-// import './style/common/layout.less'
-// import './style/common/base.css'
 // import demo from './common/demo.js'
 
 import one from './widget'
@@ -18,7 +16,6 @@ Vue.use(one)
 Vue.use(infoTable)
 Vue.config.productionTip = false
 
-// /* eslint-disable no-new */
 const app = new Vue({
   router,
   render: h => h(App)

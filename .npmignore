@@ -1,2 +1,7 @@
+node_modules
 docs
 src
+package-lock.json
+webpack.config.json
+.editorconfig
+.gitignore
