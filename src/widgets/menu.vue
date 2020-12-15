@@ -109,10 +109,15 @@ export default {
   }
   .one-collapse {
     .one-collapse-head {
-      padding: 16px 20px;
+      padding: 0;
       border-bottom: 1px solid @dark - #111;
       a {
+        display: block;
         color: #fff;
+        padding: 16px 20px;
+        &:hover {
+          background-color: rgba(20,20,20,.1);
+        }
       }
     }
     .one-icon {
