@@ -1,7 +1,7 @@
 const menu = [
   {
     label: '基础',
-    value: '/base',
+    name: 'base',
     icon: 'icon-layout',
     children: [
       { label: 'layout', value: '/layout' },
@@ -11,13 +11,8 @@ const menu = [
     ]
   },
   {
-    label: '测试 A',
-    value: '/demo3',
-    icon: 'icon-detail'
-  },
-  {
     label: '表单',
-    value: '/form',
+    name: 'form',
     icon: 'icon-detail',
     children: [
       { label: 'block', value: '/block' },
@@ -32,13 +27,8 @@ const menu = [
     ]
   },
   {
-    label: '测试 B',
-    value: '/demo4',
-    icon: 'icon-detail'
-  },
-  {
     label: '通知',
-    value: '/notice',
+    name: 'notice',
     icon: 'icon-message',
     children: [
       { label: 'notify', value: '/notify' }
@@ -46,7 +36,7 @@ const menu = [
   },
   {
     label: '通用',
-    value: '/common',
+    name: 'common',
     icon: 'icon-wrench',
     children: [
       { label: 'modal', value: '/modal' },
@@ -58,12 +48,18 @@ const menu = [
   },
   {
     label: '示例',
-    value: '/demo',
+    name: 'demo',
     icon: 'icon-experiment',
     children: [
       { label: 'form', value: '/form' },
       { label: 'test', value: '/test' }
     ]
+  },
+  {
+    label: '测试 B',
+    name: 'demo4',
+    value: '/demo4',
+    icon: 'icon-detail'
   }
 ]
 

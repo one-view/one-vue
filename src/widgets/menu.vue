@@ -4,7 +4,7 @@
       <template v-for="(item, index) in data">
         <one-collapse :key="index" :arrow="hasChildren(item)">
           <template v-slot:head>
-            <router-link :to="{ path: `${getLink(item)}` }">
+            <router-link :to="getLink(item)">
               <i :class="['one-icon', item.icon]"></i> 
               <span>{{ getTitle(item) }}</span>
             </router-link>
@@ -12,7 +12,7 @@
           <template v-slot:body>
             <ul class="submenu" v-if="hasChildren(item)">
               <li v-for="(it, idx) in getChildren(item)" :key="idx">
-                <router-link :to="{ path: `${getLink(it)}` }">
+                <router-link :to="getLink(it)">
                   {{ getTitle(it)}}
                 </router-link>
               </li>
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     getLink(item) {
-      return item[this.proxyName.link] || 'javascript:;'
+      return item[this.proxyName.link] || ''
     },
     getTitle(item) {
       return item[this.proxyName.title]

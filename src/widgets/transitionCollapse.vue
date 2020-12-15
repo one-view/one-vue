@@ -71,14 +71,16 @@ const listeners = {
     })
   },
   leave (el) {
-    // force to redraw/repaint for css3 transition
-    console.log(el.scrollHeight)
+    // IMPORTANT：force browser to redraw/repaint for css3 transition
+    el.scrollHeight
+
     setStyle(el.style, {
       height: 0,
       opacity: 0,
       paddingTop: 0,
       paddingBottom: 0
     })
+
   },
   afterLeave (el) {
     removeClass(el, className)

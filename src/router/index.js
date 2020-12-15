@@ -21,7 +21,7 @@ menu.forEach(item => {
   item.children && item.children.forEach(it => {
     router.routes.push({
       path: it.value,
-      component: () => import(`../pages${item.value}/${it.label}`)
+      component: () => import(`../pages/${item.name}/${it.label}`)
     })
   })
 })
