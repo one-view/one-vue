@@ -14,7 +14,7 @@
 <template>
   <div class="home">
     <div class="content">
-      <img src="/src/assets/coollogo.png">
+      <img src="../assets/coollogo.png">
     </div>
     <one-footer></one-footer>
   </div>

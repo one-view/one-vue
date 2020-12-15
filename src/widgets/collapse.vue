@@ -55,11 +55,12 @@
 </style>
 
 <template>
-<div class="one-collapse" :class="[activeCls, uiCls]">
+<div class="one-collapse" :class="[activeCls, uiClassname]">
   <div class="one-collapse-head" @click="toggle">
-    <slot name="head"></slot>
-    <span>{{ name }}</span>
-    <i class="one-collapse-icon-arrow"></i>
+    <slot name="head">
+      <span>{{ name }}</span>
+    </slot>
+    <i v-show="arrow" class="one-collapse-icon-arrow"></i>
   </div>
   <transition-collapse>
     <div class="one-collapse-body" v-show="active">
@@ -71,6 +72,7 @@
 
 <script>
 const className = 'one-collapse'
+
 export default {
   name: className,
   data () {
@@ -88,7 +90,7 @@ export default {
     childIndex () {
       return this.$parent.$children.indexOf(this)
     },
-    uiCls () {
+    uiClassname () {
       return 'ui-' + (this.ui || 'default')
     }
   },
@@ -98,6 +100,10 @@ export default {
       default () {
         return this._uid
       }
+    },
+    arrow: {
+      type: Boolean,
+      default: true
     },
     ui: {
       type: String,

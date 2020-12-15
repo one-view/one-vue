@@ -11,6 +11,11 @@ const menu = [
     ]
   },
   {
+    label: '测试 A',
+    value: '/demo3',
+    icon: 'icon-detail'
+  },
+  {
     label: '表单',
     value: '/form',
     icon: 'icon-detail',
@@ -25,6 +30,11 @@ const menu = [
       { label: 'slider', value: '/slider' },
       { label: 'tag', value: '/tag' }
     ]
+  },
+  {
+    label: '测试 B',
+    value: '/demo4',
+    icon: 'icon-detail'
   },
   {
     label: '通知',

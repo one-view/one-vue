@@ -18,7 +18,7 @@ const router = {
  * @return {[type]}     [description]
  */
 menu.forEach(item => {
-  item.children.forEach(it => {
+  item.children && item.children.forEach(it => {
     router.routes.push({
       path: it.value,
       component: () => import(`../pages${item.value}/${it.label}`)

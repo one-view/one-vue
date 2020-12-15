@@ -1,13 +1,5 @@
-<style lang="less">
-    .one-form{
-        .one-block-title{
-            width: 150px !important;
-        }
-    }
-</style>
-
 <template>
-  <div class="one-form">
+  <one-form>
       <h3>FORM DEMO</h3>
       <br>
       <hr>
@@ -47,11 +39,11 @@
       <br>
       <one-block width="150px">
         <h3>表单数据</h3>
-        <p v-for="(value, key) in form">
-          {{ key }} : {{ value }}
+        <p>
+            {{ form }}
         </p>
       </one-block>
-  </div>
+  </one-form>
 </template>
 
 <script>
