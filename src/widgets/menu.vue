@@ -86,22 +86,16 @@ export default {
 <style lang="less">
 .one-menu {
   @dark: #31394a;
-  // @max-width: 360px;
   display: block;
   overflow: auto;
   position: relative;
   overflow-x: hidden;
-  // max-width: @max-width;
   width: 100%;
   user-select: none;
   &.ui-dark {
-    background-color: #31394a;
     color: #fff;
-    // .one-collapse {
-      // border-bottom: 1px solid #202839;
-    // }
     .submenu {
-      background-color: #202839;
+      // background-color: #202839;
       a {
         color: #fff;
       }
@@ -110,13 +104,13 @@ export default {
   .one-collapse {
     .one-collapse-head {
       padding: 0;
-      border-bottom: 1px solid @dark - #111;
+      // border-bottom: 1px solid @dark - #111;
       a {
         display: block;
         color: #fff;
         padding: 16px 20px;
         &:hover {
-          background-color: rgba(20,20,20,.1);
+          background-color: rgba(20,20,20,.2);
         }
       }
     }
@@ -134,7 +128,7 @@ export default {
         background-color: rgba(20,20,20,.2);
       }
       &.router-link-active {
-        background-color: #f50;
+        background-color: rgba(20,20,20,.3);
         color: #fff;
       }
     }

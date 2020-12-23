@@ -8,7 +8,8 @@
   top: 0;
   width: @width;
   height: 100%;
-  background-color: #2b3344;
+  // background-color: #2b3344;
+  background-color: #2b2b41;
   transition: width .2s ease;
   &-logo{
     height: 50px;
