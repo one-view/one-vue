@@ -9,7 +9,8 @@ export default {
       {
         class: [
           'one-row'
-        ]
+        ],
+        ...context.data
       },
       context.children
     )

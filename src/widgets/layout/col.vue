@@ -17,11 +17,11 @@ export default {
     return h(
       'div',
       {
-        ...context.data,
         class: [
           'one-col',
           `one-col-${grid}`
-        ]
+        ],
+        ...context.data
       },
       context.children
     )
