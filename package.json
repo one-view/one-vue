@@ -1,7 +1,7 @@
 {
   "name": "one-vue",
   "description": "✨ One系列基础组件库 ✨ ",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "roei <roeichow@gmail.com>",
   "license": "MIT",
   "main": "./dist/main.js",
