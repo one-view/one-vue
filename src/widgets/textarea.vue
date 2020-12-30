@@ -9,7 +9,7 @@
   textarea{
     display: block;
     width: 100%;
-    height: 160px;
+    height: 120px;
     border: 1px solid #ddd;
     border-radius: 3px;
     padding: 10px;
@@ -17,6 +17,9 @@
     transition: border .2s ease;
     line-height: 24px;
     font-size: 14px;
+    max-width: 100%;
+    min-width: 200px;
+    margin: 0 !important;
     &:focus{
       border-color: #488EF1;
     }
@@ -37,12 +40,14 @@
 </style>
 
 <template>
+<div>
     <div class="one-textarea">
         <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur" :maxlength="max"></textarea>
-        <div class="tip" v-if="max > 0">
-              <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
-          </div>
+        <div class="tip" v-if="limit">
+            <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
+        </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -58,6 +63,10 @@ export default {
     max: {
       type: Number,
       default: 240
+    },
+    limit: {
+      type: Boolean,
+      default: true
     },
     value: {
       type: String,

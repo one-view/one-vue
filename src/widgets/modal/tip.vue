@@ -1,4 +1,4 @@
-<style lang="less" scoped>
+<style lang="less">
 .one-tip{
   .one-modal-title {
       text-align: center;
@@ -11,7 +11,7 @@
 </style>
 
 <template>
-    <Modal class="one-tip" width="400px" :visible="show" :center="true" :is-bg-clickable="false">
+    <Modal class="one-tip" width="400px" v-model="show" :center="true" :is-bg-clickable="false">
       <template slot="body">
         <div class="one-modal-utility">
             <div class="one-modal-title">提示</div>

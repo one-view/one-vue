@@ -20,7 +20,7 @@
           <one-date-picker v-model="form.datepicker"></one-date-picker>
       </one-block>
       <one-block title="INPUT">
-          <input type="text" v-model="form.input">
+          <input class="one-input" type="text" v-model="form.input">
           <!-- <one-input></one-input> -->
       </one-block>
       <one-block title="SLIDER">
@@ -36,6 +36,7 @@
           <one-btn class="btn-info">SUBMIT</one-btn>
       </one-block>
       <br>
+      <input class="one-input" type="text" v-model="form.input">
       <br>
       <one-block width="150px">
         <h3>表单数据</h3>

@@ -1,5 +1,18 @@
 <style lang="less">
 @h: 32px;
+.one-input {
+    height: @h;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    transition: border .2s ease;
+    font-size: 14px;
+    &:focus{
+        border:1px solid #488EF1 !important;
+        box-shadow: none !important;
+    }
+}
 .one-block{
     display: flex;
     position: relative;
@@ -9,7 +22,6 @@
     transition: background .2s ease;
     .one-block-title,
     .one-part{
-        float: left;
         padding: 0 12px;
     }
     .one-block-title{
@@ -24,18 +36,8 @@
     .one-part{
         line-height: @h;
     }
-    input{
-        height: @h;
-        padding: 0 10px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        outline: none;
-        transition: border .2s ease;
-        font-size: 14px;
-        &:focus{
-            border:1px solid #488EF1 !important;
-            box-shadow: none !important;
-        }
+    input {
+        .one-input;
     }
 }
 </style>

@@ -1,4 +1,4 @@
-<style lang="less" scoped>
+<style lang="less">
 .one-modal {
     position: fixed;
     top: 0;
@@ -49,7 +49,7 @@
 }
 </style>
 <template>
-    <transition name="fade">
+    <transition :name="transitionName">
         <div class="one-modal" v-show="show" :class="{'one-modal-center': center}">
             <div class="one-modal-bg" @click.stop="closeBg" :style="{backgroundColor: bgColor}"></div>
             <div class="one-modal-container" :style="{width: styleWidth}">
@@ -86,6 +86,7 @@ export default {
       default: false
     }
   },
+  mixins: [Basic],
   data () {
     return {
       showHead: false,
@@ -97,8 +98,8 @@ export default {
       return Number(this.width) ? `${this.width}px` : this.width
     }
   },
-  mixins: [Basic],
   mounted () {
+    console.log(this.value)
     this.showHead = this.$slots.head || this.title
     this.showFoot = this.$slots.foot
   }

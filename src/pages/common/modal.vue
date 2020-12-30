@@ -14,7 +14,7 @@
     <h1>代码</h1>
     <br>
     <code-snippet :value="html" type="html"></code-snippet>
-    <one-modal ref="modalOne" :visible="showone" @toggle="val => this.showone = val">
+    <one-modal ref="modalOne" v-model="showone">
       <template slot="head">
         <h1>title</h1>
       </template>
@@ -33,7 +33,7 @@
       </template>
     </one-modal>
 
-    <one-modal ref="modalTwo" :visible="showtwo" @toggle="val => this.showtwo = val">
+    <one-modal ref="modalTwo" v-model="showtwo">
       <template slot="head">
         <h1>title</h1>
       </template>

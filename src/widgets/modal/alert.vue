@@ -11,7 +11,7 @@
 </style>
 
 <template>
-<Modal class="one-alert" width="400px" :visible="show" :center="true" :is-bg-clickable="true" @toggle="value => this.show = value">
+<Modal class="one-alert" width="400px" v-model="show" :center="true" :is-bg-clickable="true">
   <template slot="body">
     <div class="one-modal-utility">
         <div class="one-modal-wrap">

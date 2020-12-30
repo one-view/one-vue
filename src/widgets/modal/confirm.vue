@@ -1,4 +1,4 @@
-<style lang="less" scoped>
+<style lang="less">
 .one-confirm {
   .one-modal-control {
     .one-btn{
@@ -16,7 +16,7 @@
 
 <template>
 
-<Modal class="one-confirm" width="400px" :visible="show" :center="true" :is-bg-clickable="isBgClickable" :bg-color="bgColor" @toggle="value => this.show = value">
+<Modal class="one-confirm" width="400px" v-model="show" :center="true" :is-bg-clickable="isBgClickable" :bg-color="bgColor">
     <template slot="body">
       <div class="one-modal-utility">
           <div class="one-modal-wrap">

@@ -1,11 +1,11 @@
 export default {
   data () {
     return {
-      show: this.visible
+      show: this.value
     }
   },
   props: {
-    visible: {
+    value: {
       type: Boolean,
       default: false
     },
@@ -13,9 +13,9 @@ export default {
       type: String,
       default: 'rgba(20,20,20,.3)'
     },
-    transition: {
+    transitionName: {
       type: String,
-      default: 'fadeModal'
+      default: 'fade'
     },
     isBgClickable: {
       type: Boolean,
@@ -23,15 +23,15 @@ export default {
     }
   },
   watch: {
-    visible (newValue) {
+    value (newValue) {
       this.show = newValue
     }
   },
   methods: {
     close () {
       this.show = false
-      this.$emit('close', this.show)
-      this.$emit('toggle', this.show)
+      this.$emit('close', false)
+      this.$emit('input', false)
     },
     closeBg () {
       if (this.isBgClickable) {
@@ -40,7 +40,7 @@ export default {
     },
     open () {
       this.show = true
-      this.$emit('toggle', this.show)
+      this.$emit('input', true)
     }
   }
 }

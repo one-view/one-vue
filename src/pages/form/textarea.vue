@@ -5,7 +5,7 @@
     <one-block title="表单">
       <one-textarea v-model="context"></one-textarea>
     </one-block>
-    <one-textarea v-model="context"></one-textarea>
+    <one-textarea v-model="context" :limit="false"></one-textarea>
     <br>
     <p>内容：{{ context }}</p>
     <br>
