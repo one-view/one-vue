@@ -5,7 +5,7 @@
         <one-collapse :key="index" :arrow="hasChildren(item)">
           <template v-slot:head>
             <router-link :to="getLink(item)">
-              <i :class="['one-icon', item.icon]"></i> 
+              <i v-if="item.icon" :class="['one-icon', item.icon]"></i> 
               <span>{{ getTitle(item) }}</span>
             </router-link>
           </template>
@@ -13,6 +13,7 @@
             <ul class="submenu" v-if="hasChildren(item)">
               <li v-for="(it, idx) in getChildren(item)" :key="idx">
                 <router-link :to="getLink(it)">
+                  <i v-if="it.icon" :class="['one-icon', it.icon]"></i> 
                   {{ getTitle(it)}}
                 </router-link>
               </li>

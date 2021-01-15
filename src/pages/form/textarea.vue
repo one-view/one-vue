@@ -3,9 +3,9 @@
     <h1>示例：文本</h1>
     <br>
     <one-block title="表单">
-      <one-textarea v-model="context"></one-textarea>
+      <one-textarea v-model="context" :max="120"></one-textarea>
     </one-block>
-    <one-textarea v-model="context" :limit="false"></one-textarea>
+    <one-textarea v-model="context"></one-textarea>
     <br>
     <p>内容：{{ context }}</p>
     <br>

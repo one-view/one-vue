@@ -43,7 +43,7 @@
 <div>
     <div class="one-textarea">
         <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur" :maxlength="max"></textarea>
-        <div class="tip" v-if="limit">
+        <div class="tip" v-if="max">
             <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
         </div>
     </div>
@@ -61,12 +61,8 @@ export default {
   },
   props: {
     max: {
-      type: Number,
-      default: 240
-    },
-    limit: {
-      type: Boolean,
-      default: true
+      type: [Number, Boolean],
+      default: false
     },
     value: {
       type: String,
