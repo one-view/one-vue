@@ -16,7 +16,7 @@ export default {
   name: 'one-checkbox',
   data () {
     return {
-      val: this.value
+      val: !!this.value
     }
   },
   computed: {
@@ -41,7 +41,6 @@ export default {
       default: false
     },
     value: {
-      type: Boolean,
       default: false
     },
     type: {
@@ -55,7 +54,7 @@ export default {
   },
   watch: {
     value (newValue) {
-      this.val = newValue
+      this.val = !!newValue
     }
   },
   methods: {

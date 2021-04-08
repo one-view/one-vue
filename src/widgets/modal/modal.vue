@@ -99,7 +99,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.value)
     this.showHead = this.$slots.head || this.title
     this.showFoot = this.$slots.foot
   }

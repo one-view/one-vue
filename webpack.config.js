@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '.', dir)
@@ -112,7 +113,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
   module.exports.optimization = {
-    minimize: true
+    minimize: true,
     // minimizer: [
     //   new TerserPlugin({
     //     parallel: true,

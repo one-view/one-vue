@@ -220,12 +220,12 @@ export default {
       }
 
       if (start + this.max < total) {
-        console.log('middle')
+        // console.log('middle')
         end = start + this.max
       }
 
       if (index + half >= total - 1)  {
-        console.log('end')
+        // console.log('end')
         start = total - this.max
         start = start < 2 ? 2: start
         end = total
@@ -235,7 +235,7 @@ export default {
       for (let i = start; i < end; i++) {
         list.push(i);
       }
-      console.log(start, end, list)
+      // console.log(start, end, list)
       return list;
     },
   },

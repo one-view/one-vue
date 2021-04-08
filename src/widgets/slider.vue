@@ -113,7 +113,7 @@ export default {
 
       let percent = this.vertical ? (1 - top / height) * this.max : left / width * this.max
       percent = percent < 0 ? 0 : percent > this.max ? this.max : parseFloat(percent.toFixed(4))
-      console.log(left, width, percent, this.max)
+      // console.log(left, width, percent, this.max)
       percent = this.handleStep(percent)
 
       this.val = percent

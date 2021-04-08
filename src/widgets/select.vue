@@ -182,7 +182,6 @@ export default {
     },
     val(val) {
       this.$emit('input', val);
-      this.$emit('modify', val);
     },
   },
   computed: {
@@ -223,6 +222,7 @@ export default {
     select(option) {
       this.val = option[this.proxyName.value];
       this.show = false;
+      this.$emit('before-select', option);
       this.$nextTick(() => {
         this.$emit('select', option);
       });

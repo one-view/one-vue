@@ -1,7 +1,7 @@
 {
   "name": "one-vue",
   "description": "✨ One系列基础组件库 ✨ ",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "author": "roei <roeichow@gmail.com>",
   "license": "MIT",
   "main": "./dist/main.js",
@@ -28,6 +28,7 @@
     "highlight.js": "^10.4.1",
     "less": "^3.12.2",
     "less-loader": "^5.0.0",
+    "terser-webpack-plugin": "^5.1.1",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.5",
     "vue-router": "^3.4.9",
