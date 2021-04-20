@@ -3,7 +3,7 @@
     <h1>示例：文本</h1>
     <br>
     <one-block title="表单">
-      <one-textarea v-model="context" :max="120"></one-textarea>
+      <one-textarea placeholder="请输入" v-model="context" :max="120"></one-textarea>
     </one-block>
     <one-textarea v-model="context"></one-textarea>
     <br>

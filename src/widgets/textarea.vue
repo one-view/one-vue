@@ -42,7 +42,7 @@
 <template>
 <div>
     <div class="one-textarea">
-        <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur" :maxlength="max"></textarea>
+        <textarea v-model="content" :disabled="disable" @keyup="change" @blur="blur" v-bind="$attrs" :maxlength="max"></textarea>
         <div class="tip" v-if="max">
             <span :class="{'warning':  overLength}">{{ textLength }}</span> / {{ max }}
         </div>

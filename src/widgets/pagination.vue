@@ -164,14 +164,14 @@
 
 <script>
 export default {
-  name: "one-pagination",
-  data() {
+  name: 'one-pagination',
+  data () {
     return {
       current: this.index,
       currentSize: this.size,
       sizeOption: [5, 10, 20, 30],
       showSizeOption: false,
-    };
+    }
   },
   props: {
     index: {
@@ -201,7 +201,7 @@ export default {
   },
   computed: {
     pageTotal() {
-      return Math.ceil(this.total / this.currentSize);
+      return Math.ceil(this.total / this.currentSize)
     },
     
     // 1,...,3,4,5,6,7,...,9
@@ -209,7 +209,7 @@ export default {
     // 1,2,3,4,5,6,...,8
     // 1,2,3,4,5,6,7
     pager() {
-      const index = this.current;
+      const index = this.current
       const total = this.pageTotal
       const half = Math.floor(this.max / 2)
       let start = 2
@@ -231,44 +231,36 @@ export default {
         end = total
       }
 
-      let list = [];
+      let list = []
       for (let i = start; i < end; i++) {
-        list.push(i);
+        list.push(i)
       }
       // console.log(start, end, list)
-      return list;
+      return list
     },
   },
   methods: {
-    jump(item) {
-      item = item < 1 ? 1 : item > this.pageTotal ? this.pageTotal : item;
-      let preIdx = this.current;
-      this.current = item;
-      this.$emit("input", this.current);
-      this.$emit("change", {
-        fromIndex: preIdx,
-        toIndex: this.current,
-        size: this.currentSize,
-      });
+    jump (item) {
+      item = item < 1 ? 1 : item > this.pageTotal ? this.pageTotal : item
+      let preIdx = this.current
+      this.current = item
+      this.$emit('input', this.current)
+      this.$emit('change', preIdx, this.current, this.currentSize)
     },
-    sizeSelect() {
-      this.showSizeOption = !this.showSizeOption;
+    sizeSelect () {
+      this.showSizeOption = !this.showSizeOption
     },
     // 重置首页
-    sizeChange(item) {
-      this.current = 1;
-      this.showSizeOption = false;
-      this.currentSize = item;
-      this.$emit("change", {
-        fromIndex: this.index,
-        toIndex: this.current,
-        size: this.currentSize,
-      });
+    sizeChange (item) {
+      this.current = 1
+      this.showSizeOption = false
+      this.currentSize = item
+      this.$emit('change', this.index, this.current, this.currentSize)
     },
   },
-  mounted() {},
+  mounted () {},
   install(Vue) {
-    Vue.component(this.name, this);
+    Vue.component(this.name, this)
   }
 }
 </script>
